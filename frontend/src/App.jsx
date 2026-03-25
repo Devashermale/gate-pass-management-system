@@ -16,7 +16,6 @@ import Adminform from './components/Adminform';
 import Visitorform from './components/Visitorform';
 import Empvisitordetails from './components/Empvisitordetails'
 import Securitydash from './pages/Securitydash';
-import Otpverify from  './components/Otpverify'
 function App() {
 
   return (
@@ -42,7 +41,7 @@ function App() {
         <Route path ='/check-pass' element ={<Checkin/>}/>
         <Route path='/employee-visitor-details' element={<Empvisitordetails/>}/>
         <Route path ='/employee-reg' element ={<Adminform/>}/>
-        <Route path ='/otp-verification' element={<Otpverify/>}/>
+        
       </Routes>
     
    
