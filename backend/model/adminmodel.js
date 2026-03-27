@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const validator =require('validator')
 const bcrypt = require('bcrypt')
-const adminschema = mongoose.Schema({
+const adminSchema = mongoose.Schema({
     email:{
         type:String,
         required:true,
@@ -17,6 +17,7 @@ const adminschema = mongoose.Schema({
 },{
     timestamps:true
 })
+
 adminSchema.statics.signup = async function(email ,password) {
     const exists = await this.findone({email})
     if(!email || !password){
@@ -40,6 +41,6 @@ const hash = await bcrypt.hash(password,salt)
  const user = await this.create({email , password:hash})
 return user
 }
-const admin = mongoose.model('admin',adminschema)
+const admin = mongoose.model('admin',adminSchema)
 
 module.exports = admin

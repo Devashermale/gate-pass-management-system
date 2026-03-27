@@ -9,7 +9,7 @@ function useEmpsign() {
     const Empsign = async (email, password) => {
 
         try {
-            const res = await axios.post('http://localhost:8080/employee/signup', {
+            const res = await axios.post('http://localhost:8080/employees/signup', {
                 email: email,
                 password: password
             })

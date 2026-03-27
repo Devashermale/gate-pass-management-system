@@ -1,33 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+
 function Navbar() {
   return (
-    <div className=' bg-zinc-900'>
-        <header className=''>
-          <img />
-        <nav className=' grid grid-cols-3 w-full bg-zinc-900 '>
-          <div>
-            <img src={logo}alt=""className=' size-18' />
-          </div>
-          <div className=' flex items-center justify-center mr-52  '>
-            <Link to='/' ><h1 className=' hover:underline text-3xl  bg-emerald-600 m-2 rounded '>Home </h1>
+    <header className='fixed top-0 w-full z-50 backdrop-blur-md bg-zinc-900/80 border-b border-white/10'>
+      <nav className='max-w-7xl mx-auto px-6 h-20 flex items-center justify-between'>
+        
+        <div className='flex items-center'>
+          <img src={logo} alt="Logo" className='h-12 w-auto object-contain' />
+        </div>
 
-            </Link>
-            <Link to ='/about' >
-            <h1 className=' hover:underline text-3xl  bg-emerald-600 m-2 rounded '>about</h1>
-            </Link>
-            <Link to = '/contact'>
-            <h1 className=' hover:underline text-3xl  bg-emerald-600 m-2 rounded'>contact</h1>
-            </Link>
-            </div>
-            <div className='flex ml-52 float-end'>
-            <Link to= '/register'><h1 className=' hover:underline text-3xl  bg-emerald-600 m-2 rounded'>register</h1></Link>
-          <Link to= '/signup'><h1 className=' hover:underline text-3xl  bg-emerald-600 m-2 rounded'>signup</h1></Link>
-          </div>
-        </nav>
-        </header>
-    </div>
+        <div className='hidden md:flex items-center gap-8'>
+          <Link to='/' className='text-white hover:text-emerald-400 font-medium transition-colors'>
+            Home
+          </Link>
+          <Link to='/about' className='text-white hover:text-emerald-400 font-medium transition-colors'>
+            About
+          </Link>
+          <Link to='/contact' className='text-white hover:text-emerald-400 font-medium transition-colors'>
+            Contact
+          </Link>
+        </div>
+
+        {/* Action Buttons */}
+        <div className='flex items-center gap-4'>
+          <Link to='/register' className='text-white hover:text-emerald-400 font-medium px-4 py-2 transition'>
+            Register
+          </Link>
+          <Link 
+            to='/signup' 
+            className='bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded-full font-bold shadow-lg transition-all transform hover:scale-105 active:scale-95'
+          >
+            Sign Up
+          </Link>
+        </div>
+
+      </nav>
+    </header>
   )
 }
 

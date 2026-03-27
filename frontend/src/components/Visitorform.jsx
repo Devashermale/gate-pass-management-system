@@ -55,7 +55,7 @@ function Visitorform() {
      return save;
     } catch (err) {
       console.error(err);
-      seterror(err.response?.data?.message || "Internal Server Error.");
+      seterror(err.message);
     } finally {
       setloading(false);
     }

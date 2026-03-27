@@ -79,7 +79,7 @@ function Visitordetails() {
                             <tr key={item._id || index} className="hover:bg-indigo-50 transition-colors">
                                 <td className="border border-gray-300 px-4 py-2 bg-white">{index + 1}</td>
                                 <td className="border border-gray-300 px-4 py-2 bg-white">
-                                    <img src={item.path} alt="visitor" className="w-10 h-10 rounded-full object-cover border" onError={(e) => e.target.src='https://via.placeholder.com/40'} />
+                                    <img src={item.path}  alt="visitor" className="w-10 h-10 rounded-full object-cover border" onError={(e) => e.target.src='https://via.placeholder.com/40'} />
                                 </td>
                                 <td className='border border-gray-300 px-4 py-2 bg-white'>{item.email}</td>
                                 <td className="border border-gray-300 px-4 py-2 bg-white">{item.name}</td>

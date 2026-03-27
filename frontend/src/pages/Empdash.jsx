@@ -10,7 +10,8 @@ function Empdash() {
           <div className=' size-90  bg-white border-2 text-2xl text-center rounded m-2'>
             whole visitors count
           </div>
-          <div className=' size-90  bg-white border-2 text-2xl text-center rounded m-2 '> active visitor count
+          <div className=' size-90  bg-white border-2 text-2xl text-center rounded m-2 '> 
+            active visitor count
           </div>
           <div className='size-90  bg-white border-2 text-2xl text-center rounded m-2 '>
             approved visitor

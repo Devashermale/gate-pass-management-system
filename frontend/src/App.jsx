@@ -19,7 +19,8 @@ import Securitydash from './pages/Securitydash';
 import { useAuthcontext } from './hooks/useAuthcontext'
 import Securitysignup from './pages/Securitysignup'
 import ProtectedRoute from './context/Proctectedroute';
-function App() {
+import Otpverify from './components/Otpverify'
+ function App() {
   const { user } = useAuthcontext();
 
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route path='/employee-signup' element={<Empsign />} />
           <Route path='/Admin-signup' element={<SignupAdmin />} />
           <Route path='/security-signup' element={<Securitysignup />} />
-
+           <Route path='/verify-otp' element ={<Otpverify/>} /> 
 
 
           <Route path="/admin-dashboard" element={<ProtectedRoute allowedRoles={['admin']}>

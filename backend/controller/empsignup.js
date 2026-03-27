@@ -8,10 +8,14 @@ const createtoken = (_id) =>{
 const postemp = async (req,res) => {
     const {email,role,password} = req.body
     try {
-        const empdata = emp.create({email,role,password})
-        const token = createtoken(visitordata._id)
+        const employeedata = await emp.create({email,role,password})
+        const token = createtoken(employeedata._id)
 
-        res.status(201).json(email ,token)
+         res.status(201).json({
+            email: employeedata.email,
+            role: employeedata.role,
+            token
+         })
     } catch (error) {
           res.status(500).json({
             error:error.message

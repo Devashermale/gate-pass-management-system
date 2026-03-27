@@ -1,7 +1,15 @@
 import React from 'react'
-import { Link, Links } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useLogout } from '../hooks/useLogout'
 
 function Empnav() {
+  
+ const navigate = useNavigate()
+  const { logout } = useLogout()
+    const handleclick = () => {
+      logout()
+   return navigate('/security-signup') 
+   }
   return (
     <div>
         <div className='h-20 w-full flex items-center justify-center  gap-4   '>
@@ -12,7 +20,7 @@ function Empnav() {
           visitor Registration
           </Link>
           <Link to ='/employee-visitor-details' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>visitor details</Link>
-          
+          <button onClick={handleclick}></button>
         </div>
     </div>
   )

@@ -12,7 +12,7 @@ function SignupAdmin() {
 
   const { Signupadmin, loading, error } = useAdminsignup()
   const handlesubmit = async () => {
-
+           const sign = await Signupadmin(email ,password)
     if (sign) {
       return navigate('/admin-dashboard')
     }

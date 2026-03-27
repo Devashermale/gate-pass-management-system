@@ -12,7 +12,11 @@ const postsecurity = async (req,res) => {
         const securitydata =await security.create({email,role, password})
     const token = createtoken(securitydata._id)
 
-        res.status(201).json(email,token)
+        res.status(201).json({
+            email:securitydata.email,
+            role:securitydata.role,
+            token
+        })
     } catch (error) {
         res.status(500).json({
             error:error.message

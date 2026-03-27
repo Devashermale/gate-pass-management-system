@@ -13,8 +13,8 @@ function useAdminsignup() {
 
         try {
             const res = await axios.post('http://localhost:8080/admin/signup', {
-                email,
-                password
+                email:email,
+                password:password
             })
 
             if (res.status === 200 || res.status === 201) {
@@ -25,7 +25,7 @@ function useAdminsignup() {
                 return res.data;
             }
         } catch (err) {
-            seterror(err.response?.data?.error || err.message);
+            seterror(err.message);
             return null;
         } finally {
             setloading(false);

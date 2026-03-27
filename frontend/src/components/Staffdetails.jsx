@@ -95,8 +95,7 @@ function Staffdetails() {
                                         <img 
                                             src={item.path} 
                                             alt="staff" 
-                                            className="w-12 h-12 rounded-full object-cover border border-gray-300 mx-auto" 
-                                            onError={(e) => e.target.src = 'https://via.placeholder.com/150'}
+                                            className="w-12 h-12 rounded-full object-cover border border-gray-300 mx-auto"
                                         />
                                     </td>
                                     <td className="p-4 text-gray-600">{item.email}</td>
