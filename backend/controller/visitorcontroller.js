@@ -5,9 +5,9 @@ const createtoken = (_id) =>{
 }
 
 const registervisitor = async (req ,res) => {
-    const {email,password} = req.body
+    const {email,role,password} = req.body
         try {
-        const visitordata = await visitor.create({name,email,password})
+        const visitordata = await visitor.create({email,role,password})
         const token = createtoken(visitordata._id)
         res.status(201).json({email , token})
     } catch (error) {
@@ -19,9 +19,9 @@ const registervisitor = async (req ,res) => {
 }
 
 const signupvisitor = async (req ,res) => {
-    const {email,password} = req.body
+    const {email,role,password} = req.body
         try {
-        const visitordata = await visitor({email,password})
+        const visitordata = await visitor({email,role,password})
         visitordata.save()
 const token = createtoken(visitordata._id)
         res.status(201).json({email , token})

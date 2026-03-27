@@ -1,14 +1,18 @@
 import React, { use, useState } from 'react'
 import useEmpsign from '../hooks/useEmpsign'
-
+import { useNavigate } from 'react-router-dom'
 function Empsign() {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const { Empsign, loading, error } = useEmpsign()
+    const navigate = useNavigate()
     const handleclick = async () => {
-        await Empsign(email, password)
+        const sign = await Empsign(email, password)
+        if (sign) {
+            navigate('/employee-dashboard')
+        }
     }
-    
+
 
     return (
         <>

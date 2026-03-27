@@ -1,24 +1,24 @@
 const mongoose = require('mongoose')
 const validator =require('validator')
 const bcrypt = require('bcrypt')
-const empschema = mongoose.Schema({
-email:{
-    type:String,
-    required:true,
-    
-},
-password:{
-type:String,
-required:true
-},
-role:{
-    type:String,
-    default:"employee"
-}
+const securityschema = mongoose.Schema({
+    email:{
+        type:String, 
+        required:true
+    },
+      password:{
+        type:String, 
+        required:true
+    },
+    role:{
+        type:String,
+        default:"security"
+    }
 },{
-    timestamps:true
+    Timestamps:true
 })
-empSchema.statics.signup = async function(email ,password) {
+
+securityschema.statics.signup = async function(email ,password) {
     const exists = await this.findone({email})
     if(!email || !password){
        throw Error('all fields are mandatory')
@@ -41,6 +41,8 @@ const hash = await bcrypt.hash(password,salt)
  const user = await this.create({email , password:hash})
 return user
 }
-const emp = mongoose.model('employee',empschema)
 
-module.exports = emp
+const securitydata = mongoose.model('security',securityschema)
+
+module.exports = securitydata
+

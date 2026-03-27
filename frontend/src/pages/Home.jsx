@@ -5,11 +5,11 @@ function Home() {
   return (
     <div>
       <div className=' h-screen bg-zinc-50 '>
-  <Navbar/>
-  <div>
+        <Navbar />
+        <div>
 
-  </div>
-  </div>
+        </div>
+      </div>
     </div>
   )
 }

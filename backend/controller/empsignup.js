@@ -1,11 +1,17 @@
 const emp = require("../model/empmodel");
+const jwt = require('jsonwebtoken')
+const createtoken = (_id) =>{
+    return jwt.sign({_id},process.env.secret,{expiresIn:'3d'})
+}
 
 
 const postemp = async (req,res) => {
-    const {email,password} = req.body
+    const {email,role,password} = req.body
     try {
-        const empdata = emp.create({email,password})
-        res.status(201).json(empdata)
+        const empdata = emp.create({email,role,password})
+        const token = createtoken(visitordata._id)
+
+        res.status(201).json(email ,token)
     } catch (error) {
           res.status(500).json({
             error:error.message

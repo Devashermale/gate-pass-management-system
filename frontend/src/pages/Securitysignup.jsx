@@ -1,14 +1,20 @@
-import React, { use, useState } from 'react'
-import useEmpsign from '../hooks/useEmpsign'
+import { useState } from 'react'
+import useSecuritysign from '../hooks/useSecuritysign'
+import { useNavigate } from 'react-router-dom'
 
 function Securitysign() {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
-    const { Empsign, loading, error } = useEmpsign()
+    const { SignupSecurity, loading, error } = useSecuritysign()
+    const navigate = useNavigate()
     const handleclick = async () => {
-        await Empsign(email, password)
+
+        const sign = await SignupSecurity(email, password)
+
+        if (sign) {
+            navigate('/security-dashboard')
+        }
     }
-    
 
     return (
         <>
@@ -21,7 +27,7 @@ function Securitysign() {
                         <label className=' font-semibold'>Password</label>
                         <input type='text' className=' w-full h-10' placeholder='enter your Email' onChange={(e) => setpassword(e.target.value)} />
                         <button type='submit' className=' w-full mt-2 bg-black h-10 text-white rounded' disabled={loading} onClick={handleclick} >submit</button>
-                        {error &&<div>{error}</div>}
+                        {error && <div>{error}</div>}
                     </div>
                 </div>
             </div>

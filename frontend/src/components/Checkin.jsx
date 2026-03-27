@@ -43,12 +43,7 @@ function Checkin() {
                         <strong className="font-bold">Success! </strong>
                         <span className="block sm:inline">Scanned Code: </span>
                         <a href={scanResult} className="underline block break-all">{scanResult}</a>
-                        <button 
-                            onClick={() => window.location.reload()} 
-                            className="mt-4 bg-green-600 text-white px-4 py-1 rounded"
-                        >
-                            Scan Again
-                        </button>
+                       
                     </div>
                 ) : (
                     <div id="reader" className="overflow-hidden rounded-lg border-2 border-dashed border-gray-300"></div>

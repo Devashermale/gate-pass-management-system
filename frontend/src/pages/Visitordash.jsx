@@ -4,10 +4,11 @@ import Visitornav from '../components/Visitornav'
 function Visitordash() {
   return (
     <div>
-        <div>  
-         <Visitornav/>
-        <Visitorform/>
-    </div>
+      <div>
+
+        <Visitornav />
+        <Visitorform />
+      </div>
     </div>
   )
 }

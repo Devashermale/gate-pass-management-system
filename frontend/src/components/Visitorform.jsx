@@ -20,7 +20,6 @@ function Visitorform() {
       from_visitdate: date,
       from_empname: emp,
     };
-
     try {
       await emailjs.send(
         'service_q79ovvp',  
@@ -32,7 +31,7 @@ function Visitorform() {
       console.error('Email failed to send:', err);
     }
   };
-
+  
   const handlesubmit = async (e) => {
     e.preventDefault();
     setloading(true);
@@ -50,10 +49,10 @@ function Visitorform() {
       const res = await axios.post('http://localhost:8080/visitor/pass', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-
-      await sendEmail();
-
+      await sendEmail()
       alert("Registration Successful");
+      const save = localStorage.getItem(res.data)
+     return save;
     } catch (err) {
       console.error(err);
       seterror(err.response?.data?.message || "Internal Server Error.");

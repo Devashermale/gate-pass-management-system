@@ -2,17 +2,17 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useAuthcontext } from './useAuthcontext'
 
-function useAdminsignup() {
+function useSecuritysign() {
     const [loading, setloading] = useState(false)
     const [error, seterror] = useState(null)
     const { dispatch } = useAuthcontext()
 
-    const Signupadmin = async (email, password) => {
+    const SignupSecurity = async (email, password) => {
         setloading(true)
         seterror(null)
 
         try {
-            const res = await axios.post('http://localhost:8080/admin/signup', {
+            const res = await axios.post('http://localhost:8080/security/signup', {
                 email,
                 password
             })
@@ -25,14 +25,14 @@ function useAdminsignup() {
                 return res.data;
             }
         } catch (err) {
-            seterror(err.response?.data?.error || err.message);
+            seterror(err.message);
             return null;
         } finally {
             setloading(false);
         }
     }
 
-    return { Signupadmin, loading, error }
+    return { SignupSecurity, loading, error }
 }
 
-export default useAdminsignup
+export default useSecuritysign
