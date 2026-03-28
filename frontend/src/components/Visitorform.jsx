@@ -37,7 +37,6 @@ function Visitorform() {
     e.preventDefault();
     setloading(true);
     seterror(null);
-    
 
     const formData = new FormData();
     formData.append('name', name);
@@ -51,9 +50,11 @@ function Visitorform() {
       const res = await axios.post('http://localhost:8080/visitor/pass', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-      await sendEmail()
+      await sendEmail() 
+     
       alert("Registration Successful");
-      const save = localStorage.getItem(res.data)
+      const save = localStorage.getItem(res.data) 
+       navigate('/otp-verify');
      return save;
     } catch (err) {
       console.error(err);
@@ -61,6 +62,8 @@ function Visitorform() {
     } finally {
       setloading(false);
     }
+       
+
   };
  
  

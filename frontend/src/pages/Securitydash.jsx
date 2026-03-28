@@ -36,7 +36,7 @@ function Securitydash() {
     <div>
       <div> 
         <Securitynav />
-        <div className=' h-screen grid grid-cols-3 bg-amber-900'>
+        <div className=' h-screen grid grid-cols-3 bg-amber-900  '>
          
           <div className='w-120 h-60  bg-blue-800  border-2 text-2xl text-center rounded m-2 '>whole  visitor 
                <span className=' m-10  text-6xl flex items-center justify-center '>{count.total}</span>

@@ -23,7 +23,6 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* Action Buttons */}
         <div className='flex items-center gap-4'>
           <Link to='/register' className='text-white hover:text-emerald-400 font-medium px-4 py-2 transition'>
             Register
