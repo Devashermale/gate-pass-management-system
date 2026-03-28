@@ -5,6 +5,7 @@ function Staffdetails() {
     const [emp, setemp] = useState([]);
     const [loading, setloading] = useState(false);
     const [error, seterror] = useState(null);
+    const [search, setsearch] = useState('');
 
     const [isEditing, setIsEditing] = useState(false);
     const [currentEmp, setCurrentEmp] = useState({
@@ -24,8 +25,8 @@ function Staffdetails() {
             setemp(res.data);
             seterror(null);
         } catch (error) {
-            seterror(error);
-            console.error(err);
+            seterror("Error fetching data");
+            console.error(error);
         } finally {
             setloading(false);
         }
@@ -36,15 +37,12 @@ function Staffdetails() {
     }, []);
 
     const deletedata = async (id) => {
-      
-            try {
-                await axios.delete(`http://localhost:8080/emp/empdata/${id}`);
-                setemp(emp.filter((item) => item._id !== id));
-            } catch (err) {
-          console.log(err);
-          
-            }
-        
+        try {
+            await axios.delete(`http://localhost:8080/emp/empdata/${id}`);
+            setemp(emp.filter((item) => item._id !== id));
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     const handleEditClick = (employee) => {
@@ -59,9 +57,15 @@ function Staffdetails() {
             setemp(emp.map(item => item._id === currentEmp._id ? res.data : item));
             setIsEditing(false);
         } catch (err) {
-            console.error( err);
+            console.error(err);
         }
     };
+
+    const filterEmp = emp.filter((item) =>
+        item.empname?.toLowerCase().includes(search.toLowerCase()) ||
+        item.email?.toLowerCase().includes(search.toLowerCase()) ||
+        item.empdept?.toLowerCase().includes(search.toLowerCase())
+    );
 
     return (
         <div className="min-h-screen bg-gray-50 flex">
@@ -69,6 +73,16 @@ function Staffdetails() {
                 <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center uppercase tracking-wider">
                     Staff Details
                 </h1>
+
+                <div className="mb-6 flex justify-center">
+                    <input
+                        type="text"
+                        placeholder="Search by name, email or department..."
+                        className="w-full max-w-md p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                        value={search}
+                        onChange={(e) => setsearch(e.target.value)}
+                    />
+                </div>
 
                 {loading && <p className="text-center text-blue-600 font-bold">Loading data...</p>}
                 {error && <p className="text-center text-red-500">{error}</p>}
@@ -88,7 +102,7 @@ function Staffdetails() {
                             </tr>
                         </thead>
                         <tbody>
-                            {emp.map((item, index) => (
+                            {filterEmp.map((item, index) => (
                                 <tr key={item._id || index} className="border-b hover:bg-indigo-50 transition-colors">
                                     <td className="p-4 text-center font-medium">{index + 1}</td>
                                     <td className="p-2 text-center">
@@ -138,14 +152,13 @@ function Staffdetails() {
                                 <img 
                                     src={currentEmp.path} 
                                     className="w-24 h-24 rounded-full object-cover border-4 border-indigo-100 mb-2"
-                                    alt="Preview"
-                                    onError={(e) => e.target.src = 'https://via.placeholder.com/150'}
+                                    alt="staff photo"
+                                
                                 />
                                 <input 
                                     className="w-full text-sm border p-2 rounded bg-gray-50"
                                     placeholder="Photo URL (path)"
-                                    value={currentEmp.path || ''} 
-                                    onChange={(e) => setCurrentEmp({...currentEmp, path: e.target.value})}
+                                    value={currentEmp.path} 
                                 />
                             </div>
 

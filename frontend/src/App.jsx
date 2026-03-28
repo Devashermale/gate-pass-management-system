@@ -20,6 +20,7 @@ import { useAuthcontext } from './hooks/useAuthcontext'
 import Securitysignup from './pages/Securitysignup'
 import ProtectedRoute from './context/Proctectedroute';
 import Otpverify from './components/Otpverify'
+import VisitorApointments from './components/Apointment';
  function App() {
   const { user } = useAuthcontext();
 
@@ -63,9 +64,9 @@ import Otpverify from './components/Otpverify'
             <Visitordash />
           </ProtectedRoute>}
           />
-          <Route path='/visitor-reg' element={<ProtectedRoute allowedRoles={['visitor']}>
+          <Route path='/visitor-reg' element={
             <Visitorform />
-          </ProtectedRoute>} />
+          } />
 
           <Route path='/visitor-pass' element={<ProtectedRoute allowedRoles={['visitor']}>
             <Passes />
@@ -86,7 +87,13 @@ import Otpverify from './components/Otpverify'
           <Route path='/visitor-reg' element={<ProtectedRoute allowedRoles={['employee']}>
             <Visitorform />
           </ProtectedRoute>
+       
+          } /> 
+            <Route path='/see-appointment' element={<ProtectedRoute allowedRoles={'visitor'}>
+           <VisitorApointments/>
+            </ProtectedRoute>
           } />
+
           <Route path='/security-dashboard' element={<ProtectedRoute allowedRoles={['security']}>
             <Securitydash />
           </ProtectedRoute>
@@ -101,7 +108,7 @@ import Otpverify from './components/Otpverify'
             <Visitorform />
           </ProtectedRoute>} />
 
-
+          <Route path=' /otp' element ={<Otpverify/>} > </Route>
         </Routes>
 
 

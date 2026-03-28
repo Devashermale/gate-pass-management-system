@@ -18,7 +18,7 @@ function adminnav() {
 
        <Link to ='/staff-detail' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>staff details</Link>
        <Link to ='/visitor-detail' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>visitor details</Link>
-      <button onClick={handleclick}></button>
+      <button onClick={handleclick}>log out</button>
     </header>
     </div>
   )

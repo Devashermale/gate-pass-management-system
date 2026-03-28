@@ -20,8 +20,9 @@ function Empnav() {
           visitor Registration
           </Link>
           <Link to ='/employee-visitor-details' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>visitor details</Link>
-          <button onClick={handleclick}></button>
+           <button className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '  onClick={handleclick}>log out</button>
         </div>
+       
     </div>
   )
 }

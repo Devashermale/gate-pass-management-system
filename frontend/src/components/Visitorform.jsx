@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 import emailjs from '@emailjs/browser';
 
 function Visitorform() {
@@ -11,7 +12,7 @@ function Visitorform() {
   const [error, seterror] = useState(null);
   const [loading, setloading] = useState(false);
   const [emp, setemp] = useState('');
-
+ const navigate  = useNavigate()
   const sendEmail = async () => {
     const templateParams = {
       from_name: name,
@@ -36,6 +37,7 @@ function Visitorform() {
     e.preventDefault();
     setloading(true);
     seterror(null);
+    
 
     const formData = new FormData();
     formData.append('name', name);
@@ -60,9 +62,13 @@ function Visitorform() {
       setloading(false);
     }
   };
+ 
+ 
+
 
   return (
     <div className='flex items-center justify-center min-h-screen bg-slate-950 p-4'>
+      
       <div className='w-full max-w-md p-6 bg-slate-900 border border-slate-800 rounded-lg'>
         <h1 className='font-bold text-2xl text-center text-white mb-4'>Visitor Registration</h1>
         
