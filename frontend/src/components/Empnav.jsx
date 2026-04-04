@@ -14,13 +14,13 @@ function Empnav() {
     <div>
         <div className='h-20 w-full flex items-center justify-center  gap-4   '>
           
-          <Link to ='/employee-dashboard' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>
+          <Link to ='/employee-dashboard' className='p-2 rounded bg-blue-600    hover:bg-blue-700  '>
           Home </Link>
-          <Link to= '/visitor-reg' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>
+          <Link to= '/visitor-reg' className='p-2 rounded   bg-blue-600 hover:bg-blue-700   '>
           visitor Registration
           </Link>
-          <Link to ='/employee-visitor-details' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>visitor details</Link>
-           <button className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '  onClick={handleclick}>log out</button>
+          <Link to ='/employee-visitor-details' className='p-2 rounded bg-blue-600 hover:bg-blue-700  '>visitor details</Link>
+           <button className='m-3 bg-rose-50 text-rose-600 '  onClick={handleclick}>log out</button>
         </div>
        
     </div>

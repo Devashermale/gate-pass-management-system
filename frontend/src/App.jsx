@@ -32,7 +32,7 @@ import VisitorApointments from './components/Apointment';
         <Routes>
           <Route path='/' element={<Home />} />
 
-          <Route path='/register' element={!user ? <Login /> : <Navigate to="/" />} />
+          <Route path='/register' element={<Login/>}/>
           <Route path='/signup' element={<Signup />} />
 
           <Route path='/employee-signup' element={<Empsign />} />
@@ -108,7 +108,9 @@ import VisitorApointments from './components/Apointment';
             <Visitorform />
           </ProtectedRoute>} />
 
-          <Route path=' /otp' element ={<Otpverify/>} > </Route>
+          <Route path='/otp-verify' 
+          element ={<Otpverify/>} 
+           />
         </Routes>
 
 

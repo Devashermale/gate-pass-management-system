@@ -12,10 +12,10 @@ function Securitynav() {
   return (
     <div>
         <header className='h-20 w-full flex items-center justify-center  gap-4 '>
-               <Link to ='/security-dashboard' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>Home</Link>
-          <Link to='/visitor-reg'className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>visitor Registration</Link>
-          <Link to ='/check-pass' className='m-3 text-indigo-600 bg-indigo-50 rounded-md hover:bg-slate-50 hover:text-slate-900 '>check in </Link>
-          <button onClick={handleclick}> log out</button>
+               <Link to ='/security-dashboard' className='p-2 rounded bg-blue-600    hover:bg-blue-700  '>Home</Link>
+          <Link to='/visitor-reg'className='p-2 rounded bg-blue-600    hover:bg-blue-700  '>visitor Registration</Link>
+          <Link to ='/check-pass' className='p-2 rounded bg-blue-600    hover:bg-blue-700  '>check in </Link>
+          <button className='m-3 bg-rose-50 text-rose-600' onClick={handleclick}> log out</button>
         </header>
     </div>
 

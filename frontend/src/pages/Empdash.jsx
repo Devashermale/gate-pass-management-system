@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Empnav from '../components/Empnav'
 function Empdash() {
   const [count, setCount] = useState({
@@ -29,24 +29,26 @@ function Empdash() {
   },[])
   return (
     <div>
-      <div className=' h-screen bg-amber-900'>
+      <div className=' h-screen bg-gray-100 '>
         <Empnav />
         <div className=' grid grid-cols-3 m-8'>
-          <div className='w-120 h-60   bg-blue-800 border-2 text-2xl text-center rounded m-2'>
-            whole visitors count
-            <span className=' m-10  text-6xl flex items-center justify-center '>{count.total}</span>
+          <div className='w-120 h-60 bg-white border-2 text-2xl shadow-sm border-blue-500 text-center rounded m-2'>
+             <h1 className=' text-slate-500'>whole visitors count</h1>
+            <span className=' text-slate-900 m-10 text-6xl flex items-center justify-center '>{count.total}</span>
           </div>
         
-          <div className='w-120 h-60  bg-blue-800 border-2 text-2xl text-center rounded m-2 '>
-            approved visitor
+          <div className='w-120 h-60 bg-white   border-2 text-2xl text-center rounded m-2 shadow-sm border-emerald-500'>
+            <h1 className=' text-slate-500'> approved visitor</h1>
+           
             <span className=' m-10  text-6xl flex items-center justify-center '>{count.approved}</span>
           </div>
-          <div className=' w-120 h-60  bg-blue-800 border-2 text-2xl text-center rounded m-2'>
-            Rejected visitor
+          <div className=' w-120  bg-white h-60 shadow-sm border-rose-500 border-2 text-2xl text-center rounded m-2'>
+            <h1 className=' text-slate-500'>Rejected visitor</h1>
             <span className=' m-10  text-6xl flex items-center justify-center '>{count.rejected}</span>
           </div>
-          <div className=' w-120 h-60   bg-blue-800 border-2 text-2xl text-center rounded m-2 '>
-            pending visitor
+          <div className=' w-120 bg-white h-60 border-amber-500 shadow-sm border-2 text-2xl text-center rounded m-2 '>
+            <h1 className=' text-slate-500'> pending visitor</h1>
+           
             <span className=' m-10  text-6xl flex items-center justify-center '> {count.pending}</span>
            
           </div>

@@ -34,26 +34,29 @@ function Securitydash() {
   },[])
   return (
     <div>
-      <div> 
-        <Securitynav />
-        <div className=' h-screen grid grid-cols-3 bg-amber-900  '>
-         
-          <div className='w-120 h-60  bg-blue-800  border-2 text-2xl text-center rounded m-2 '>whole  visitor 
-               <span className=' m-10  text-6xl flex items-center justify-center '>{count.total}</span>
+      <div className=' h-screen bg-slate-50'> 
+                 <Securitynav />
+        <div className='  grid grid-cols-3   '>
+          <div className='w-120 h-60  bg-white border-t-4 border-blue-500  border text-2xl text-center rounded  '>
+            <h1 className='text-blue-600'>whole  visitor </h1>
+               <span className=' m-10  text-6xl flex items-center justify-center  '>{count.total}</span>
           </div>
-          <div className='  w-120 h-60  bg-blue-800 border-2 text-2xl text-center rounded m-2 '>pending 
+          <div className='  w-120 h-60 bg-white border-t-4  border-amber-500 text-2xl text-center rounded  '>
+            <h1 className='text-amber-600'>visitor</h1>
                <span  className=' m-10  text-6xl flex items-center justify-center '>{count.pending}</span>
           </div>
-          <div className=' w-120 h-60   bg-blue-800 border-2 text-2xl text-center rounded m-2 '>approved
+          <div className=' w-120 h-60 bg-white border-t-4 border-emerald-500 text-2xl text-center rounded m-2 '>
+            <h1 className='text-emerald-600'>  approved visitor</h1>
+          
                <span  className=' m-10  text-6xl flex items-center justify-center '>{count.approved}</span>
           </div>
-          <div className=' w-120 h-60  bg-blue-800 border-2 text-2xl text-center rounded m-2 '>visitor check in
+          <div className=' w-120 h-60  bg-white border-t-4 border-indigo-500 text-2xl text-center rounded m-2 '>
+            <h1 className='text-indigo-600'>visitor check-in</h1>
                <span  className=' m-10  text-6xl flex items-center justify-center '>{count.checkedin}</span>
             </div>
-            <div className=' w-120 h-60   bg-blue-800 border-2 text-2xl text-center rounded m-2 '>visitor check in
-               <span   className=' m-10  text-6xl flex items-center justify-center  '>{count.checkedout}</span>
-            </div>
-              <div className='w-120 h-60  bg-blue-800 border-2 text-2xl text-center rounded m-2 '>visitor Rejected
+           
+              <div className='w-120 h-60 bg-white border-t-4 border-rose-500 text-2xl text-center rounded m-2 '>
+                <h1 className=' text-rose-600'>visitor Rejected</h1>
                <span  className=' m-10  text-6xl flex items-center justify-center '>{count.rejected}</span>
              </div>
         </div>

@@ -20,13 +20,13 @@ function Signup() {
     <div>
       <div className=' bg-gray-700 flex items-center justify-center h-screen'>
         <form className=' size-80 bg-white rounded-md p-5'>
-          <h1 className=' font-bold text-center text-2xl p-2.5'>Signup</h1>
-          <label className=' font-bold text-lg m-1.5'>email</label> <br />
+          <h1 className=' font-bold text-center text-2xl p-2.5 text-slate-900'>Signup</h1>
+          <label className=' font-bold text-lg m-1.5 text-slate-900'>email</label> <br />
           <input type='email' className=' w-full h-10 m-1.5 border-2 rounded-md' placeholder='enter your email' onChange={(e) => setemail(e.target.value)} /> <br />
-          <label className=' font-bold text-lg m-1.5'>password</label> <br />
+          <label className=' font-bold text-lg m-1.5 text-slate-900'>password</label> <br />
           <input type='password' className=' w-full h-10 m-1.5 border-2 rounded-md' placeholder='enter your password' onChange={(e) => setpassword(e.target.value)} /> <br />
-          <button type=' submit ' className=' mt-2 w-full h-10 bg-blue-950 rounded' disabled={loading} onClick={handlesubmit}>submit</button>
-          {error && <div><h1>{error}</h1></div>}
+          <button type=' submit ' className='  w-full h-10 bg-indigo-600 hover:bg-indigo-700 rounded-md ' disabled={loading} onClick={handlesubmit}>submit</button>
+          {error && <div><h1 className='text-red-500'>{error.message}</h1></div>}
         </form>
       </div>
     </div>
