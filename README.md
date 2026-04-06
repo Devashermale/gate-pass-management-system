@@ -32,6 +32,7 @@ Deployment: Vercel (Frontend), Render (Backend)
 Bash
 
 git clone
+
 cd gate-pass-management-system
 
 
