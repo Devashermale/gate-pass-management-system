@@ -31,8 +31,8 @@ Deployment: Vercel (Frontend), Render (Backend)
 
 Bash
 
-git clone https://github.com/your-username/visitor-pass-system.git
-cd visitor-pass-system
+git clone
+cd gate-pass-management-system
 
 
 2.Install dependencies:
