@@ -29,5 +29,42 @@ Deployment: Vercel (Frontend), Render (Backend)
 
 1.Clone the repository:
 
+Bash
+
 git clone https://github.com/your-username/visitor-pass-system.git
 cd visitor-pass-system
+
+
+2.Install dependencies:
+
+Bash
+
+# Install backend dependencies
+
+cd server
+
+npm install
+
+# Install frontend dependencies
+
+cd ../client
+
+npm install
+
+3.Run the application:
+
+Bash
+
+# Run backend (from /server)
+npm start
+
+# Run frontend (from /client)
+npm run dev
+
+📸 Screenshots
+
+home page 
+<img width="1873" height="885" alt="Screenshot 2026-04-04 190013" src="https://github.com/user-attachments/assets/c47df1e8-aa59-40f5-9c2c-d99940652cd8" />
+
+
+
