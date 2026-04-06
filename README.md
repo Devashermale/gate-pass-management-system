@@ -1,4 +1,5 @@
 #Visitor Pass Management System
+
 A streamlined, modern solution for managing visitor access, enhancing security, and automating the check-in process. This system replaces traditional paper logs with a digital workflow involving QR code authentication, OTP verification, and real-time administrative monitoring
 
 🚀 Features
