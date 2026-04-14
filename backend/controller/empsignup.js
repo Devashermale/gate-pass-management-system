@@ -1,7 +1,7 @@
 const emp = require("../model/empmodel");
 const jwt = require('jsonwebtoken')
-const createtoken = (_id) =>{
-    return jwt.sign({_id},process.env.secret,{expiresIn:'3d'})
+const createtoken = (user) =>{
+    return jwt.sign({ id: user._id, role: user.role },process.env.secret,{expiresIn:'3d'})
 }
 
 

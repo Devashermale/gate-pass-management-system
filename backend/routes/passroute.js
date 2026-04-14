@@ -2,8 +2,10 @@ const express = require('express')
 const multer = require('multer');
 const { getpass, postpass, putpass, Deletepass, passget } = require('../controller/passcontroller')
 const upload = require('../middleware/photo')
+const protect = require('../middleware/requireauth')
 
 const router = express.Router()
+
 router.get('/pass',passget)
 router.get('/pass/:id',getpass)
 router.post('/pass',upload.single('path'),postpass)

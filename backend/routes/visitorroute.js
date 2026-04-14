@@ -3,9 +3,11 @@ const { registervisitor, signupvisitor } = require('../controller/visitorcontrol
 const { protect } = require('../middleware/requireauth');
 const router = express.Router()
 
-router.use(protect(['visitor']))
 router.post('/register',registervisitor)
 router.post('/signup',signupvisitor)
+router.get('/dashboard', protect(['visitor']), (req, res) => {
+    res.status(200).json({ message: "Access granted to Admin Dashboard" });
+});
 
 
 module.exports = router

@@ -18,8 +18,8 @@ const adminSchema = mongoose.Schema({
     timestamps:true
 })
 
-adminSchema.statics.signup = async function(email ,password) {
-    const exists = await this.findone({email})
+adminSchema.statics.Signup = async function(email ,password) {
+    const exists = await this.findOne({email})
     if(!email || !password){
        throw Error('all fields are mandatory')
     }
@@ -38,7 +38,7 @@ throw Error('email already exits')
 }
 const salt = await bcrypt.gensalt(8)
 const hash = await bcrypt.hash(password,salt)
- const user = await this.create({email , password:hash})
+ const user = await this.create({email , password:hash,role: 'admin'})
 return user
 }
 const admin = mongoose.model('admin',adminSchema)

@@ -1,12 +1,7 @@
 const dotenv = require('dotenv')
-dotenv.config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-
-
-
-
 
 const adminroute = require('./routes/adminsignuproute')
 const visitorroute = require('./routes/visitorroute')
@@ -18,7 +13,11 @@ const otp = require('./routes/otproutes')
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+    allowedHeaders: ['Content-Type', 'Authorization']
+    }
+))
 app.use(express.urlencoded({ extended: true }));
 require('dotenv').config({ override: true });
 
@@ -32,7 +31,6 @@ app.use ('/otp',otp)
 
 const port = process.env.port
 const dburl =process.env.MONGODB
-
 
 mongoose.connect(dburl)
 .then(() =>{

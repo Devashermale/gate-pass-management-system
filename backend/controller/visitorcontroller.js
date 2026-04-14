@@ -9,7 +9,11 @@ const registervisitor = async (req ,res) => {
         try {
         const visitordata = await visitor.create({email,role,password})
         const token = createtoken(visitordata._id)
-        res.status(201).json({email , token})
+        res.status(201).json({
+            email:visitordata.email ,
+            role:visitordata.role,
+             token
+            })
     } catch (error) {
          res.status(500).json({
             error:error.message

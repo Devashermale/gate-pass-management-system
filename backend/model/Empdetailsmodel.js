@@ -26,6 +26,10 @@ const Empschema = mongoose.Schema({
 path:{
  type:String,
  required:true
+},
+user_id:{
+type:String,
+required:true
 }
 },{
   Timestamps:true
