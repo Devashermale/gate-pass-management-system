@@ -19,7 +19,7 @@ import Securitydash from './pages/Securitydash';
 import { useAuthcontext } from './hooks/useAuthcontext'
 import Securitysignup from './pages/Securitysignup'
 import ProtectedRoute from './context/Proctectedroute';
-import Otpverify from './components/Otpverify'
+import Otpverify from './components/otpverify'
 import VisitorApointments from './components/Apointment';
  function App() {
   const { user } = useAuthcontext();
